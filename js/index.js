@@ -11,7 +11,7 @@ funBus.addEventListener('mouseenter', function(){
 funBus.addEventListener('mouseleave', function(){
     funBus.style.transform = 'scale(1)';
 });
-/////////// MOUSE OVER BUS IMG ////////////////////
+/////////// MOUSE LEAVE BUS IMG ////////////////////
 
 let logoFun = document.querySelector('.btn');
 
@@ -33,10 +33,10 @@ function checkKeyPress(key){
 ////////////// KEY DOWN ALERT MESSAGE, PRESS A ///////////////////
 
 
-window.addEventListener('load', (event) => {
-    alert('page is fully loaded');
-    // event.stopPropagation();
-})
+// window.addEventListener('load', () => {
+//     alert('Ya page is loaded!!!');
+//     // event.stopPropagation();
+// })
 
 //////////////// LOAD FEATURING STOP PROP //////////
 
@@ -50,37 +50,6 @@ headerBack.forEach((element) => {
   })
 
 ////////////// CLICK on h4's ///////////////////////////
-
-// let logoFunAgain = document.querySelectorAll('.btn');
-
-// logoFunAgain.forEach((element) => {
-//     element.addEventListener('focus', (event) =>{
-//         event.target.style.background = 'pink';
-        
-//     });
-// });
-
-// console.log(logoFunAgain)
-
-/////////////////////////////////////////////////////////
-
-// let scrollinAlong = document.querySelectorAll('h2');
-
-// scrollinAlong.forEach((element) => {
-//     element.addEventListener('scroll', (event) =>{
-//         event.target.parentElement.parentElement.style.transform = 'scale(3)';
-//         event.target.parentElement.parentElement.style.transition = '5s'
-//     });
-// });
-// scrollinAlong.addEventListener('scroll', function(){
-//     scrollinAlong.style.transform = 'scale(3)'
-//     scrollinAlong.style.transition = 'transform 5s'
-// });
-
-// console.log(scrollinAlong);
-
-
-////////////// SCROLL ///////////////////////
 
 let usingWheel = document.querySelector('.logo-heading');
 
@@ -116,3 +85,45 @@ mouseOut.addEventListener('mouseout', function(){
         keyUp.style.transform = 'scale(1)';
         keyUp.style.transition = 'transform 2s';   
 });
+
+/////////////// MOUSE OUT ///////////////////////
+
+const body = document.querySelector('body');
+
+body.addEventListener('click', () => {
+    body.style.backgroundColor = 'MediumAquamarine';
+})
+
+const contentSection = document.querySelectorAll('.content-section');
+
+contentSection.forEach((element) => {
+    element.addEventListener("click", (event) => {
+        
+        event.stopPropagation();
+        event.target.parentElement.parentElement.style.transform = "rotate(360deg)";
+        event.target.parentElement.parentElement.style.transition = "transform 1s";
+        
+    })
+  })
+
+
+
+
+// contentSection.addEventListener('click', (event) => {
+//     event.stopPropagation();
+//     contentSection.style.backgroundColor = 'slategray';
+// })
+console.log(contentSection);
+console.log(body);
+
+////////////// STOP PROPAGATION /////////////////////
+
+let theNav = document.querySelector('nav');
+
+theNav.addEventListener('click', (event) => {
+    event.preventDefault();
+})
+
+console.log(theNav);
+
+/////////////// PREVENT DEFAULT ON NAV ///////////////
