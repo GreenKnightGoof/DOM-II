@@ -1,7 +1,7 @@
 let funBusIMG = document.querySelector(".intro img");
 
 funBusIMG.addEventListener("mouseenter", () => {
-  funBusIMG.style.transform = "scale(2)";
+  funBusIMG.style.transform = "scale(1.2)";
   funBusIMG.style.transition = "transform 1s";
 });
 
@@ -93,3 +93,27 @@ let navItems = document.querySelectorAll("a").forEach((nav) => {
 });
 
 // PREVENT DEFAULT ABOVE
+
+let stopProp = document.querySelectorAll('h2').forEach((heading) => {
+    heading.addEventListener('click', (event) => {
+        heading.style.color = 'blue';
+        event.stopPropagation();
+    });
+});
+
+// ATTEMPTED STOP PROPOGATION BUT DID NOT WORK ABOVE
+
+const body = document.querySelector('body');
+body.addEventListener('click', (e) => {
+    body.style.color = 'red';
+})
+
+const containerHome = document.querySelector('.intro');
+
+containerHome.addEventListener('click', (e) => {
+    console.log(containerHome)
+    containerHome.style.color = 'yellow';
+    e.stopPropagation();
+});
+
+// STOP PROPAGATION EVENT SHOULD WORK ABOVE
