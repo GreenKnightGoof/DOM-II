@@ -2,14 +2,14 @@ let funBusIMG = document.querySelector(".intro img");
 
 funBusIMG.addEventListener("mouseenter", () => {
   funBusIMG.style.transform = "scale(2)";
-  funBusIMG.style.transition = "transform 2s";
+  funBusIMG.style.transition = "transform 1s";
 });
 
 // MOUSE ENTER EVENT ABOVE
 
 funBusIMG.addEventListener("mouseleave", () => {
   funBusIMG.style.transform = "scale(1)";
-  funBusIMG.style.transform = "transform 2s";
+  funBusIMG.style.transform = "transform 1s";
 });
 
 // MOUSE LEAVE EVENT ABOVE
@@ -85,3 +85,11 @@ bodyEvent.addEventListener("contextmenu", () => {
 });
 
 // CONTEXT MENU "RIGHT CLICK" EVENT ABOVE
+
+let navItems = document.querySelectorAll("a").forEach((nav) => {
+  nav.addEventListener("click", (event) => {
+    event.preventDefault();
+  });
+});
+
+// PREVENT DEFAULT ABOVE
